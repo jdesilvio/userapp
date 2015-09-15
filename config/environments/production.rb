@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-  config.action_mailer.default_url_options = { host: 'https://userapp2.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'userapp2.herokuapp.com/' }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
