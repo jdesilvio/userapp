@@ -8,7 +8,7 @@
 
 ###Install `Devise` Gem and Setup Authentication Framework
 * Followed instructions on: [The Devise GitHub page](https://github.com/plataformatec/devise)
-* Wacthed tutorials: [here](https://www.youtube.com/watch?v=qY5HccvIuS4) and [here](https://www.youtube.com/watch?v=3zvyeEYXT78)
+* Wacthed tutorials [here](https://www.youtube.com/watch?v=qY5HccvIuS4) and [here](https://www.youtube.com/watch?v=3zvyeEYXT78)
 
 ###Deploy to Heroku
 * Deployed app to Heroku
@@ -16,7 +16,16 @@
 
 **It works so far!**
 
+###Some Devise Configuration
+* Followed tutorial [here](https://www.youtube.com/watch?v=YnGuALpJN1M)
+* Go to migration file and uncomment the `confirmable` fields
+* If you messed up, like I did, run `rake db:rollback`, then uncomment the fields and run `rake db:migrate` again
+* Add `:confirmable` to `models/users.rb`
+* Add `config.action_mailer.perform_deliveries = true` to `development.rb`
+* Add `ActionMailer` configuration to new file `initializers/setup_mail.rb`
+
 ###Setup ActionMailer
+_Do this **before** SendGrid or environment files_
 * Followed instruction in [SendGrid docs](https://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html)
 * Generate a mailer
 * Setup mailer action
