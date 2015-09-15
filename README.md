@@ -10,32 +10,21 @@
 * Followed instructions on: [The Devise GitHub page](https://github.com/plataformatec/devise)
 * Wacthed tutorials [here](https://www.youtube.com/watch?v=qY5HccvIuS4) and [here](https://www.youtube.com/watch?v=3zvyeEYXT78)
 
-###Deploy to Heroku
-* Deployed app to Heroku
-* Remember to run `rake db:migrate`
-
-**It works so far!**
-
 ###Some Devise Configuration
 * Followed tutorial [here](https://www.youtube.com/watch?v=YnGuALpJN1M)
 * Go to migration file and uncomment the `confirmable` fields
 * If you messed up, like I did, run `rake db:rollback`, then uncomment the fields and run `rake db:migrate` again
 * Add `:confirmable` to `models/users.rb`
-* Add `config.action_mailer.perform_deliveries = true` to `development.rb`
+* Set configuration in `environments/development.rb` and `environments/production.rb`
 * Add `ActionMailer` configuration to new file `initializers/setup_mail.rb`
-
-###Setup ActionMailer
-_Do this **before** SendGrid or environment files_
-* Followed instruction in [SendGrid docs](https://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html)
-* Generate a mailer
-* Setup mailer action
-* Create view for confirmation email
-* `rails generate devise:controllers users` to modify `users` controller
-* Remember to update `routes.rb`
 
 ###Install _SendGrid_ Heroku Add-on
 * `heroku addons:create sendgrid:starter`
-* Setup `production.rb` per the [docs](https://devcenter.heroku.com/articles/sendgrid#ruby-rails)
-* Setup `development.rb` per [this blog post](https://howilearnedrails.wordpress.com/2014/02/25/setting-up-email-in-a-rails-4-app-with-action-mailer-in-development-and-sendgrid-in-production-using-heroku/comment-page-1/) since I want to send emails in development
 * Added `gem "figaro"` and followed instructions on: [The Figaro GitHub page](https://github.com/laserlemon/figaro)
-* Setup up `Enviroment Variables` for development
+* Setup up `Enviroment Variables` for SendGrid username and password
+
+###Deploy to Heroku
+* Deployed app to Heroku
+* Remember to run `heroku run rake db:migrate`
+
+**It works!!**
