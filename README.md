@@ -14,3 +14,4 @@
 * `heroku addons:create sendgrid:starter`
 * Setup `production.rb` per the [docs](https://devcenter.heroku.com/articles/sendgrid#ruby-rails)
 * Setup `development.rb` per [this blog post](https://howilearnedrails.wordpress.com/2014/02/25/setting-up-email-in-a-rails-4-app-with-action-mailer-in-development-and-sendgrid-in-production-using-heroku/comment-page-1/) since I want to send emails in development
+* Added `gem "figaro"` and followed instructions on: [The Figaro GitHub page](https://github.com/laserlemon/figaro)
