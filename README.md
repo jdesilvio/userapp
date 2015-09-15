@@ -16,6 +16,14 @@
 
 **It works so far!**
 
+###Setup ActionMailer
+* Followed instruction in [SendGrid docs](https://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html)
+* Generate a mailer
+* Setup mailer action
+* Create view for confirmation email
+* `rails generate devise:controllers users` to modify `users` controller
+* Remember to update `routes.rb`
+
 ###Install _SendGrid_ Heroku Add-on
 * `heroku addons:create sendgrid:starter`
 * Setup `production.rb` per the [docs](https://devcenter.heroku.com/articles/sendgrid#ruby-rails)
